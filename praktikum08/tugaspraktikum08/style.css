@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 10px 10px;
+}
+
+body{
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer{
+    background-color: turquoise;
+    height: 50px;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+main{
+    display: flex;
+    flex: 1;
+    margin: 10px 0;
+}
+
+main aside{
+    background-color: aqua;
+    flex: 1;
+    height: 500px;
+    margin-right: 20px;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+main article{
+    background-color: palevioletred;
+    flex: 2;
+    height: 500px;
+}
+
+p{
+    text-align: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+article{
+    align-items: flex-end;
+}
+
+article .atas{
+    text-align: center;
+}
+
+article .bawah{
+    display: flex;
+}
+
+article p{
+    align-items: center;
+    margin-top: 300px;
+}
+
+.kotak{
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+    width: 70%;
+    height: 130px;
+    color: palevioletred;
+    text-align: center;
+    font-weight: bold;
+    padding: auto;
+}
+

@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Cara 1 */
+
+.container{
+    display: flex;
+    flex: 1;
+}
+
+.container .kiri:nth-child(1){
+    flex: 1;
+    width: 30%;
+}
+
+.container .kanan:nth-child(2){
+    flex: 4;
+    width: 70%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+nav{
+    background-color: pink;
+    height: 630px;
+    padding: 15px;
+}
+
+
+header, footer{
+    background-color: khaki;
+    padding: 15px;
+    height: 50px;
+}
+
+main{
+    display: flex;
+    height: 500px;
+}
+
+main article{
+    background-color: beige;
+    width: 75%;
+    padding: 15px;
+}
+
+main aside{
+    background-color: aqua;
+    width: 25%;
+    padding: 15px;
+}
+
