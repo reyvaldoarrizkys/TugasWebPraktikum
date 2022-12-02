@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 9.4</title>
+</head>
+<body>
+    <form>
+        <input type="number" onchange="hitung_hasil()" id="angka1" style="width:100%; border:1px solid black; border-radius:4px; -moz-border-radius:4px; height:200px; font-family:Garamond; margin-left:10px;font-size: 130px;";>
+        <h1 style="margin-left: 10px;">+</h1>
+        <input type="number" onchange="hitung_hasil()" id="angka2" style="width:100%; border:1px solid black; border-radius:4px; -moz-border-radius:4px; height:200px; font-family:Garamond; margin-left:10px; font-size: 130px;";>
+        <h1 style="margin-left: 10px;">=</h1>
+        <input type="number" id="hasil" style="width:100%; border:1px solid black; border-radius:4px; -moz-border-radius:4px; height:200px; font-family:Garamond; margin-left:10px;font-size: 130px;";>    
+    </form>
+    
+    <script>
+        function hitung_hasil(){
+            let a = Number(document.getElementById("angka1").value);
+            let b = Number(document.getElementById("angka2").value);
+            
+            // HITUNG HASIL
+            let h = a + b;
+            document.getElementById("hasil").value = h;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 9.3</title>
+</head>
+<body>
+    <h2>Biaya Parkir</h2>
+    <form>
+        Jam Masuk : <input type="number" id="masuk">
+        <br>
+        Jam Keluar : <input type="number" id="keluar">
+        <br>
+        <input type="button" value="Hitung" onclick="parkir()">
+        <br>
+        Biaya <input type="text" id="biaya">
+    </form>
+    <script>
+        function parkir(){
+            // Tangkap Nilai Input Jam Masuk, Simpan ke variabel m
+            let m = document.getElementById("masuk").value;
+            // Tangkap Nilai Input Jam Keluar, Simpan ke variabel k
+            let k = document.getElementById("keluar").value;
+            // Buat Total Waktu Parkir
+            let t = k - m;
+            
+            // Buat Tarif Awal
+            let tarif_awal = 3000;
+
+            // Selisih Waktu Jika Lebih dari 2 Jam
+            let selisih_waktu = t - 2;
+            // Buat Tarif Lanjut
+            let tarif_lanjut = selisih_waktu * 1000
+            // Buat Tarif Total
+            let tarif_total = tarif_awal + tarif_lanjut;
+        
+            // Tangkap hasil tarif total dan tampilkan
+            document.getElementById("biaya").value = "Rp." + tarif_total;
+        }
+    </script>
+</body>
+</html>
