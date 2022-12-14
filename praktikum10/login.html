@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+</head>
+<body>
+    <form id="form" onsubmit="kirim()" action="dashboard.html">
+        Username : <input type="text" id="username">
+        <br>
+        Password : <input type="password" id="password">
+        <br>
+        <button type="submit">Kirim</button>
+
+        <p>
+            Username dan Password yang benar :
+        </p>
+        <p>Username : admin</p>
+        <p>Password : integrity</p>
+    </form>
+
+    <!-- Koding Javascript -->
+    <script>
+        function kirim(){
+            // Tangkap Inputan Username, Simpan Ke Variabel nama
+            let nama = document.getElementById("username").value;
+            // Tangkap Inputan Password, Simpan Ke Variabel pass
+            let pass = document.getElementById("password").value;
+            // Simpan Hak Akses id form, Ke variabel form
+            let form = document.getElementById("form");
+
+            if (nama == "admin" && pass == "integrity") {
+                form.setAttribute("action","dashboard.html")
+                window.alert("Login Berhasil");
+            } else {
+                window.alert("Login Gagal");
+            }
+        }
+    </script>
+</body>
+</html>

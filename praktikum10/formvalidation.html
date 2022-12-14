@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="css/formvalidation.css">
+    <style>
+        #container{
+            justify-content: center;
+            width: 100%;
+            border: 1px solid black hidden;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>FORM VALIDASI JS <br> (MINIMALIST FORM)</header>
+
+    <form id="form" class="topBefore">
+            
+              <input id="nama" type="text" placeholder="NAMA  *(HARUS DIISI)" maxlength="30">
+              <input id="email" type="text" placeholder="E-MAIL  *(HARUS DIISI)" required>
+              <br>
+              <br>
+              <label for="appt">JAM KEBERANGKATAN</label>
+              <input id="appt" name="appt" type="time" value="00:00" min="00:00" max="23:59 required">
+              <input id="tujuan" type="text" placeholder="TUJUAN KEBERANGKATAN   *(HARUS DIISI)">
+              <input id="tiket" type="number" placeholder="JUMLAH TIKET (MAX 10 TIKET)  *(HARUS DIISI)" min="1" max="10" block>
+      <input id="submit" type="button" value="Kirim!" onclick="validasi()">
+      
+      <br><br>
+      <div id="container">
+        <h1 id="hasil"></h1>
+        <p id="hasil_nama"></p>
+        <p id="hasil_email"></p>
+        <p id="hasil_jam"></p>
+        <p id="hasil_tujuan"></p>
+        <p id="hasil_tiket"></p>
+      </div>
+    </form>
+
+    <script>
+        function validasi(){
+            let kotak = document.getElementById("container");
+            let nama = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let waktu = document.getElementById("appt").value;
+            let tujuan = document.getElementById("tujuan").value;
+            let tiket = document.getElementById("tiket").value;            // Simpan Hak Akses id form, Ke variabel form
+            let form = document.getElementById("form");
+
+            if (nama == "") {
+                window.alert("Nama Pelanggan Harus Diisi!");
+                
+            } else if(email == ""){
+                window.alert("Email Harus Diisi!");
+                
+            } else if(waktu == ""){
+                window.alert("Jam Keberangkatan Harus Diisi!");
+                
+            } else if(tujuan == ""){
+                window.alert("Tujuan Keberangkatan Harus Diisi!");
+                
+            } else if(tiket == ""){
+                window.alert("Jumlah Tiket Harus Diisi!");
+                
+            } else {
+                window.alert("Berhasil Mendaftar");
+                kotak.style.border = "1px solid black";
+                kotak.style.paddingLeft = "10px";
+                kotak.style.height = "300px";
+                kotak.style.outline = "none";
+                document.getElementById("hasil").innerHTML = "DETAIL PESANAN : ";
+                document.getElementById("hasil_nama").innerHTML = "Nama : " + nama;
+                document.getElementById("hasil_email").innerHTML = "Email : " + email;
+                document.getElementById("hasil_jam").innerHTML = "Berangkat : " + waktu;
+                document.getElementById("hasil_tujuan").innerHTML = "Tujuan : " + tujuan;
+                document.getElementById("hasil_tiket").innerHTML = "Jumlah Tiket : " + tiket;
+            } 
+            
+            
+        }
+    </script>
+</body>
+</html>

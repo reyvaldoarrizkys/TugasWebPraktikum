@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <select id="pilih" onchange="picker()">
+            <option value="" hidden>--- Pilih ---</option>
+            <option id="elang" value="elang">Elang</option>
+            <option id="gorilla" value="gorilla">Gorilla</option>
+            <option id="singa" value="singa">Singa</option>
+        </select>
+        <br>
+        <img id="gambar">
+    </div>
+
+    <script>
+        // Buat Variabel Pilih Lalu Simpan hak Akses id pilih
+        let pilih = document.getElementById("pilih");
+        // Buat Variabel elang Lalu Simpan hak Akses id elang
+        let elang = document.getElementById("elang");
+        // Buat Variabel gorilla Lalu Simpan hak Akses id gorilla
+        let gorilla = document.getElementById("gorilla");
+        // Buat Variabel singa Lalu Simpan hak Akses id singa
+        let singa = document.getElementById("singa");
+        let img = document.getElementById("gambar");
+
+        function picker(){
+            if (pilih.value == elang.value) {
+                img.setAttribute("src","img/elang.jpg")
+                alert("Ini Gambar Elang");
+            } else if(pilih.value == gorilla.value) {
+                img.setAttribute("src","img/gorila.jpg")
+                alert("Ini Gambar Gorilla");
+            } else if(pilih.value == singa.value) {
+                img.setAttribute("src","img/singa.jpg")
+                alert("Ini Gambar Singa");
+            } else {
+                alert("Salah Pilih");
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        .container{
+            width: 100%;
+        }
+
+        #box{
+            width: 50%;
+            border: 1px solid black;
+            height: 500px;
+        }
+
+        #pesan{
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Baris 1 -->
+        <div id="box"></div>
+        <!-- Baris 2 -->
+        <input type="text" value="" id="pesan">
+        <input type="button" value="kirim" onclick="chat()">
+    </div>
+
+    <script>
+        let chatbox = document.getElementById("box");
+        let pesan = document.getElementById("pesan");
+
+        function chat(){
+            // Buat tag/element p terus simpan ke variabel paragraf
+            let paragraf = document.createElement("p"); // <p></p>
+            // Nambahin element p kedalam box
+            chatbox.appendChild(paragraf);
+            // Isi tag p dengan inputan dari id pesan
+            paragraf.innerHTML = pesan.value;
+
+        }
+    </script>
+</body>
+</html>

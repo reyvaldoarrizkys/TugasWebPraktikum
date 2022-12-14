@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs</title>
+</head>
+<body>
+    <form style="background-color: aqua;">
+        <fieldset>
+            <legend>Kurs Rupiah - Mata Uang Asing</legend>
+            <table border="1">
+                <thead>
+                    <th>Masukkan Nilai</th>
+                    <th>Mata Uang</th>
+                    <th>Rupiah</th>
+                </thead>
+                <tbody>
+                    <td><input type="number" id="uang" onchange="kurs()"></td>
+                    <td>
+                        <select id="pilihan" onchange="kurs()">
+                            <option value="" hidden>--- Pilih ---</option>
+                            <option value="usd">Dollar US</option>
+                            <option value="sd">Dollar Singapore</option>
+                            <option value="rm">Ringgit Malaysia</option>
+                            <option value="yen">Yen Jepang</option>
+                            <option value="eu">Euro</option>
+                            <option value="riyal">Riyal Arab Saudi</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" id="konversi">
+                    </td>
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+
+    <script>
+        function kurs(){
+            // Tangkap Inputan Uang, Simpan Ke Variabel uang
+            let uang = document.getElementById("uang").value;
+            // Tangkap Inputan pilihan, Simpan Ke Variabel pilihan
+            let mata_uang = document.getElementById("pilihan").value;
+            // Rumus untuk menyimpan Rumus
+            let rumus;
+
+            if (mata_uang == "usd"){
+                rumus = uang * 9915;
+                // Akses id Konversi, Isi Dengan Variabel Rumus
+                document.getElementById("konversi").value = rumus;
+            } else if (mata_uang == "sd"){
+                rumus = uang * 13472;
+                // Akses id Konversi, Isi Dengan Variabel Rumus
+                document.getElementById("konversi").value = rumus;
+            } else if (mata_uang == "rm"){
+                rumus = uang * 874;
+                // Akses id Konversi, Isi Dengan Variabel Rumus
+                document.getElementById("konversi").value = rumus;
+            } else if (mata_uang == "yen"){
+                rumus = uang * 120;
+                // Akses id Konversi, Isi Dengan Variabel Rumus
+                document.getElementById("konversi").value = rumus;
+            } else if (mata_uang == "eu"){
+                rumus = uang * 15888;
+                // Akses id Konversi, Isi Dengan Variabel Rumus
+                document.getElementById("konversi").value = rumus;
+            } else if (mata_uang == "riyal"){
+                rumus = uang * 3592;
+                // Akses id Konversi, Isi Dengan Variabel Rumus
+                document.getElementById("konversi").value = rumus;
+            } else {
+                rumus = "Anda Tidak Memilih";
+                document.getElementById("konversi").value = rumus;
+            } 
+        }
+    </script>
+</body>
+</html>
